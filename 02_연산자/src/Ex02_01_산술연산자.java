@@ -10,7 +10,7 @@ public class Ex02_01_산술연산자 {
 		System.out.print("첫번째값 : ");
 		num1 = sc.nextInt();
 		System.out.print("두번째값 : ");
-		num2 = sc.nextInt();
+		num2 = sc.nextInt(); 
 		
 		System.out.println(num1+"+"+num2+"="+(num1+num2));   //30+23=53
 		System.out.println(num1+"-"+num2+"="+(num1-num2));   

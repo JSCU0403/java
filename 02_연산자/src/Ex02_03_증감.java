@@ -10,7 +10,7 @@ public class Ex02_03_증감 {
 	//	a++; //1씩으로만 증가 
 	++a; //증감연산자만 단독 사용시에는 상관없지만 대입연산자가 있을경우 앞,뒤에 따라 출력되는 값이 바뀜
 	System.out.println("a="+a); 
-	
+	 
 	a=5;
 	System.out.println("a="+a); 
 	

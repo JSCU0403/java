@@ -10,7 +10,7 @@ public class Ex02_02_복합대입 {
 		System.out.println(a);
 		System.out.println(b);
 		b -= 3;  
-		System.out.println(b);
+		System.out.println(b); 
 		
 		System.out.println(c);
 		c *= 2;

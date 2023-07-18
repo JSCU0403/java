@@ -16,6 +16,6 @@ public class Ex02_05_삼항 {
 		System.out.println("a는 홀짝여부 = "+str);
 		
 		
-	}
+	} 
 
 }

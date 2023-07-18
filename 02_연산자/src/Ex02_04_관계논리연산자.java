@@ -15,7 +15,7 @@ public class Ex02_04_관계논리연산자 {
 		System.out.println("c:"+c);
 		c = a>100 && b>10;
 		System.out.println("c:"+c);
-		
+		 
 		c = a>100 || b>10; //||(논리or) 한쪽이라도 참(true)일때 결과는 참(true) 모두 거짓일때 (f)
 		System.out.println("c:"+c);
 		c = a>20 || b>20;  //모두 거짓이므로 f
