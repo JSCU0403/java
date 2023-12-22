@@ -1,4 +1,4 @@
-class Sub1{
+ class Sub1{
 	int x = 5;
 	void display() {
 		System.out.println("Sub1 x :"+x);
