@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Ex12</title>
+</head>
+<body>
+	<h1>예약 문의</h1>
+	<form action = "a.jsp"> 
+	<p>
+		<label for="userName">작성자</label>
+		<input type = "text" name = "userName" id="userName" value = "아이유">
+	</p>
+	<p>
+		<label >비밀번호</label>
+		<input type = "password" name = "userPwd"  >
+	</p>
+	<p>
+		<label >제목</label>
+		<input type = "text" name = "userTitle"  >
+	</p>
+	
+	<p>
+		<label >투숙 날짜</label>
+		<input type = "date" name = "userDate"  >
+	</p>
+	
+	<p>
+	예약하실 객실을 선택하세요<br>
+	<fieldset style = "width:30%">
+	<legend>객실선택</legend>
+	<input type = "radio" name = "userRoom">Single
+	<input type = "radio" name = "userRoom">Double
+	<input type = "radio" name = "userRoom">Twin
+	</fieldset>
+	</p>
+	
+	<p>
+	예약자 성별을 선택하세요<br>
+	<fieldset style = "width:20%">
+	<legend>성별선택</legend>
+	<input type = "radio" name = "성별"> 남자
+	<input type = "radio" name = "성별"> 여자
+	</fieldset>
+	</p>
+	
+	<p>
+		<label >좋아하는 색상 선택</label>
+		<input type = "color" name = "userColor"  >
+	</p>
+	
+	<p>
+		<label >평점</label>
+		<input type = "range" name = "userPoints" min ="1" max = "10" step = "1" value = "5"  >
+	</p>
+	
+	<p>
+		<label >이메일</label>
+		<input type = "text" name = "userEmail" >@
+		<select name="userEmail3">
+			<option>### 선택 ###</option>
+			<option>naver.com</option>
+			<option>gmail.com</option>
+			<option>daum.net</option>
+		</select>
+	</p>
+	
+	<p>
+		<fieldset style = "width:50%">
+			<legend>옵션 선택</legend>
+			<input type = "checkbox" name "userOption">조식
+			<input type = "checkbox" name "userOption">바베큐
+			<input type = "checkbox" name "userOption">픽업서비스
+		</fieldset>
+	</p>
+	
+	<p>
+		<label >신원확인용 사진 올리기</label> <br>
+		<input type = "file" name = "userFile"  >
+	</p>
+	
+	<p>
+		<label >글 내용</label> <br>
+		<textarea rows="5" cols="40" name="userMessage">문의 사항을 입력하세요</textarea> >
+	</p>
+	
+	<p>
+	<input type = "submit" value="전송">
+	<input type = "reset" value="취소">
+	</p>
+	</form>
+</body>
+</html>
