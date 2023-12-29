@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Ex_transform</title>
+	<style type="text/css">
+		.wrapper{
+		width : 150px;
+		height : 50px;
+		border : 1px solid #bbb
+		}
+		.trans01,.trans02,.trans03,.trans04,.trans05{
+			width : 150px;
+			height : 50px;
+			background-color: rgb(204,204,204);
+		}	
+		.trans02{
+			transform : rotate(20deg);
+			transform-origin : 50% 50%;
+		}
+		.trans03{
+			transform : rotate(20deg);
+			transform-origin : 0% 0%;
+		}
+		.trans04{
+			transform : rotate(-20deg);
+			transform-origin : 100% 100%;
+		}
+		.trans05{
+			transform : skewX(20deg);
+		}<!-- 마름모꼴-->
+	
+	</style>
+</head>
+<body >
+	<div class = 'wrapper'>
+		<div class = "trans01">	</div>	
+	</div>
+	<div class = 'wrapper'>
+		<div class = "trans02">	</div>	
+	</div>
+	<div class = 'wrapper'>
+		<div class = "trans03">	</div>	
+	</div>
+	<div class = 'wrapper'>
+		<div class = "trans04">	</div>	
+	</div>
+	<div class = 'wrapper'>
+		<div class = "trans05">	</div>	
+	</div>
+</body>
+</html>
