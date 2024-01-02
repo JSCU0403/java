@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">//오류발생시 오류 발생한 밑으로는 따로 표시 되지않는다.
+	age = 30; //변수 생성시 var 생략가능 전역변수
+	document.write("나이 1 : " + age + "<br>");
+	
+	function test(){
+		var age = 40; //함수내에서만 쓰는 지역변수
+		document.write("나이 2 : " + age + "<br>"); 
+	}
+	function test2(age){
+		document.write("나이 4 : " + age + "<br>"); 
+		age = 90;
+	}
+	test();
+	document.write("나이 3 : " + age + "<br>");//전역변수값을 받음
+	test2(70);
+	document.write("나이 5 : " + age + "<br>");//전역변수값을 받음
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

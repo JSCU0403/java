@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Ex10</title>
+<script type="text/javascript">
+	kor = Number(prompt("국어 점수를 입력하세요.","77"));
+	math = Number(prompt("수학 점수를 입력하세요.","89"));
+	eng = Number(prompt("영어 점수를 입력하세요.","100"));
+	document.write("국어 점수 : "+ kor+"<br>")
+	document.write("수학 점수 : "+ math+"<br>")
+	document.write("영어 점수 : "+ eng+"<br>")
+	
+	sum = Number(kor+math+eng);
+	avg = Number((kor+math+eng)/3);
+	document.write("합계 : "+ sum +"<br>");
+	document.write("평균1 : "+ avg +"<br>");
+	document.write("평균2 : "+ Math.round(avg) +"<br>");
+	document.write("평균3 : "+ (avg).toFixed(2) +"<br>");
+	
+	document.write("-----if문-----"+"<br>");
+	if (avg>=90){
+		document.write("A학점입니다."+"<br>");
+	}else if (avg>=80){
+		document.write("B학점입니다."+"<br>");
+	}else if (avg>=70){
+		document.write("C학점입니다."+"<br>");
+	}else if (avg>=60){
+		document.write("D학점입니다."+"<br>");
+	}else if (avg>=50){
+		document.write("E학점입니다."+"<br>");
+	}else {
+		document.write("F학점입니다."+"<br>");
+	}
+	
+	document.write("-----switch문-----"+"<br>");
+	Savg = parseInt(avg/10);
+	switch(Savg){
+	case 9 :
+		document.write("A학점입니다.");
+		break;
+	case 8 :
+		document.write("B학점입니다.");
+		break;
+	case 7 :
+		document.write("C학점입니다.");
+		break;
+	case 6 :
+		document.write("D학점입니다.");
+		break;
+	case 5 :
+		document.write("E학점입니다.");
+		break;
+	default :
+		document.write("F학점입니다.");
+	}
+</script>
+</head>
+<body>
+
+</body>
+</html>
+
+<!-- 국영수 점수 입력 
+합계/평균 
+90A 80 B 70C/
+if else
+switch case
+
+학점 출력 -->
+

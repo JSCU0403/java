@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Ex08</title>
+<script type="text/javascript">
+	function bg(pos){//pos에 이미지의 경로가 들어옴
+		
+		var reply = confirm("정말 배경 이미지를 바꾸시겠습니까?")
+		
+		if (reply == true){
+			document.body.style.backgroundImage = "url("+pos+")";
+		}else{ /* 취소버튼누르면 나오는 false에 해당하는 명령어칸 */
+			
+		}
+	}
+	
+</script>
+</head>
+<body onLoad="alert('저의 홈페이지에 오신것을 환영합니다.')"> <!-- body영역 load시 alert 메세지 출력 -->
+	<form >
+		<input type="button" value="버튼" onClick="alert('alert입니다')"> <!-- 버튼클릭시 alert창 출력  -->
+
+		<input type="button" value="배경바꾸기1" onClick="bg('./../images/bg10.gif')"> <!-- ./=현재위치 ../상위폴더 /images: 상위폴더 중 하위폴더  -->
+		<input type="button" value="배경바꾸기2" onClick="bg('../images/bg11.gif')"> <!-- 버튼클릭시 배경 출력 큰따옴표와 구별하기 위해 내부에는 작은 따옴표 사용  -->
+	</form>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	#result{
+		width : 200px;
+		height : 100px;
+		background-color: yellow;
+		}
+</style>
+<script type="text/javascript">
+	function SumOfTwo(a,b){
+		//document.write(a+","+b+"<br>");
+		myarea = document.getElementById("result");
+		
+		if(a == null){
+			myarea.innerHTML = "변수 a가 초기화 되지 않았습니다.<br>변수 b의 값은 "+b+"입니다.<br>"
+		}
+		else if(typeof b == undefined){
+			myarea.innerHTML = "변수 b에는 값이 들어오지 않았습니다."
+		}
+		else{
+			myarea.innerHTML = "a+b=" + (a+b) + "입니다."
+		}
+	}
+</script>	
+</head>
+<body>
+	<h1>a와 b의 값을 선택하세요</h1>
+	<form>
+	<button type="button" value="a=3, b=10" onclick="SumOfTwo(3,10)">a=3,b=10</button>
+	<button type="button" value="b=8" onclick="SumOfTwo(null,8)">b=8</button>
+	<button type="button" value="a=8" onclick="SumOfTwo(8)">a=8</button>
+	</form>
+	<br>
+	
+	<div id = "result"></div>
+</body>
+</html>
