@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Ex15</title>
+<style type="text/css">
+	#result{
+		width : 200px;
+		height : 100px;
+		background-color: yellow;
+		}
+</style>
+
+<script type="text/javascript">
+	function text(){
+		str = prompt("이름과 나이를 입력하세요","아이유/30");
+		myarea = document.getElementById("result");
+		myarea.innerHTML = "이름과 나이는" + str + "입니다.";
+	}
+
+</script>
+</head>
+<body>
+	이름과 나이를 입력하세요<br>
+	<input type = "button" , value = "버튼" , onClick="text()">
+	
+	<div id = "result"></div>
+	
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Ex13_김준수</title>
+<style type="text/css">
+	table {
+			 text-align: center; 
+			 margin : 40px auto;
+			 width : 1000px;
+			 height : 400px;
+			 }
+	th{
+			border : 1px solid #000000;
+			background-color: #FFA7A7;
+	}
+	td{
+			border : 1px solid #000000;
+	}
+	
+</style>
+<script type="text/javascript">
+
+		document.write("<table border = '1'>");
+		document.write("<tr>")
+		for (dan = 2; dan <= 9; dan++) {
+				document.write("<th>" + dan + "단 </th>");
+		}
+			document.write("</tr>")
+		
+		for (su = 1; su <= 9; su++) {
+			document.write("<tr>")
+			for (dan = 2; dan <= 9; su++) {
+			document.write("<td>" + dan + +" X "+ su + " = "+ dan*su+ " </td>");
+			}
+			document.write("</tr>")
+		}
+		document.write("</table>");
+</script>
+</head>
+<body>
+
+</body>
+</html>
+<!-- 
+테이블 형태 구구단 1단..2단..9단.. 핑크색
+2 x 1 = 2 | 3 x 1 = 3 ....
+2 x 2 = 4 |  -->
