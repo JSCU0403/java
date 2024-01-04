@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Ex03</title>
+<script type="text/javascript">
+	  a =  Array("kim",'lee');
+	  b = ['park','choi','hong'];
+	
+	  c = a.concat(b);
+	
+	document.write(c.length+"<br>");
+	for(i in c){
+		document.write(c[i]+" , ");
+	}
+	document.write("<br>")
+	
+	cSlice = c.slice(1,3); //c의 순서가 1이상 3미만 까지만 가져오기
+	document.write(cSlice + "<br>");
+	
+	cSort = c.sort(); //c 내부의 정렬
+	for(i=0;i<cSort.length;i++){
+	document.write(cSort[i] + " ");
+	}
+	document.write("<br>")
+	
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

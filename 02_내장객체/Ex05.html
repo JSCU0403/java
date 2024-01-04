@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Ex05</title>
+<style type="text/css">
+	#result {
+		background-color : yellow;
+		width : 200px;
+		height : 150px;
+	}
+</style>
+<script type="text/javascript">
+f_selarr = Array("한식","중식","일식","외국식");
+
+var s_selarr = new Array();
+s_selarr[0] = new Array('김치찌개', '된장찌개', '불고기', '설렁탕', '뼈해장국');
+s_selarr[1] = new Array('탕수육', '팔보채', '깐풍기','볶음밥');
+s_selarr[2] = new Array('초밥', '덮밥', '문어구이','스시','우동');
+s_selarr[3] = new Array('스테이크', '캐비어', '푸아그라', '파스타','월남쌈'); 
+
+function init(){
+	상자.처음.options[0] = Option("선택"); //text,value
+	상자.second.options[0] = Option("선택");
+	
+	for(i=0;i<f_selarr.length;i++){
+		상자.처음.options[i+1] = Option(f_selarr[i]);
+	}
+	
+}
+function firstChange(){
+	
+	
+	findex = 상자.처음.selectedIndex;
+	fvalue = 상자.처음[findex].value;
+	
+		for(j=상자.second.length;j>0;j--){ //끝자리부터 지우기
+			상자.second.options[j+1] = null;
+		}
+		
+		for(i=0;i<s_selarr[findex-1].length;i++){ 
+			상자.second.options[i+1] = 
+					new Option(s_selarr[findex-1][i]);
+		}
+}
+
+function secondChange(){
+	findex = 상자.처음.selectedIndex;
+	fvalue = 상자.처음[findex].value;
+	
+	sindex = 상자.second.selectedIndex;
+	svalue = 상자.second[sindex].value;
+
+	myarea = document.getElementById("result");
+	myarea.innerHTML = ("선택한 메뉴는 <br>"+fvalue+"- "+svalue+"입니다");
+}
+</script>
+</head>
+<body onLoad="init()">
+	<form name = "상자">
+		<select id="처음"  style = "width:70px" onChange="firstChange()"></select>	
+		<select id="second"  style = "width:70px" onChange="secondChange()"></select>	
+	</form>
+	<div id = "result">
+	</div>
+</body>
+</html>

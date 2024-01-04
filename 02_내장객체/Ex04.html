@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Ex04</title>
+<script type="text/javascript">
+	arr = Array(2);
+	
+	arr[0] = Array();
+	arr[1] = Array();
+	
+	arr[0][0]='rose';
+	arr[0][1]='tulip';
+	arr[0][2]='lily';
+	
+	arr[1][0]='윤아';
+	arr[1][1]='서현';
+	arr[1][2]='태연';
+	arr[1][3]='티파니';
+	
+	arr2 = Array(2);
+	
+	arr2[0] = Array('rose','tulip','lily');
+	arr2[1] = Array('윤아','서현','태연','티파니');
+	
+	arr3 = [
+		['rose','tulip','lily'],
+		['윤아','서현','태연','티파니']
+	];
+	
+	document.write(arr + "<br>");
+	document.write(arr.length + "<br>");
+	document.write(arr[0].length + "<br>");
+	document.write(arr[1].length + "<br>");
+	
+	for(i=0;i<arr.length;i++){
+		for(j=0;j<arr[i].length;j++){
+		  document.write(arr[i][j] + " ");
+			}
+		  document.write("<br>");
+	}
+	
+	for(i=0;i<arr.length;i++){
+		  document.write(arr[i] + " ");
+		  document.write("<br>")
+	}
+	
+	for(i in arr){
+		for(j in arr[i]){
+			document.write(arr[i][j]+" ");
+		}
+		document.write("<br>");
+	}
+</script>
+</head>
+<body>
+
+</body>
+</html>
+
+<!--  int[][] arr = {
+ {10,20},
+ {30,40,50}
+ };
+
+int[][] arr = new int[][]{
+ {10,20},
+ {30,40,50}
+ };
+ 
+ int[] arr = new int[2]; //가변배열
+ arr[0] = new int[2];
+ arr[1] = new int[3];
+ arr[0][0]=10;
+ arr[0][1]=20;
+ arr[0][0]=30;
+ arr[1][1]=40;
+ arr[2][2]=50;
+ -->

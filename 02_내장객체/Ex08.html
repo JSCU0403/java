@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Ex08</title>
+<script type="text/javascript">
+	var a = Math.max(1,4,3,12,65,90,2,8); //자바와 다르게 여러가지 사용가능
+	document.write('a: '+a+"<br>");
+	document.write(Math.min(1,4,3,12,65,90,2,8)+"<br>")
+	document.write(Math.floor(7.987)+"<br>") //소숫점 버림
+	
+	document.write(parseInt(7.987)+"<br>") //소숫점 버림
+	
+	document.write(Math.ceil(7.987)+"<br>") //소숫점 첫째자리 올림
+	document.write(Math.round(7.787)+"<br>") //소숫점 첫째자리 반올림
+
+	var num1 = Math.random();//0이상 1미만의 실수인 난수
+	document.write("num1 : "+num1+"<br>");
+	document.write("10에서 27 사이의 정수 난수 : "+Math.round(num1*17+10)+"<br>");
+	document.write("10에서 27 사이의 정수 난수 : "+Math.floor(num1*18+10)+"<br>");
+	
+	var num2 = Math.round(num1*17+10);
+	var cnt = 0;
+	
+	do{
+	input = prompt('10에서 27사이의 값을 입력하시오','');
+	if(num2>input){
+		alert("더 큰수를 입력하세요");
+	}else if(num2<input){
+		alert("더 작은수를 입력하세요");
+	}else{
+		alert("맞췄습니다.")
+		break;
+	}
+		cnt++;
+	}while(true);
+	
+	document.write("시도한 횟수"+cnt);
+	</script>
+</head>
+<body>
+
+</body>
+</html>

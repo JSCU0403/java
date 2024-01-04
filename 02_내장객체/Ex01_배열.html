@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Ex01</title>
+<script type="text/javascript">
+
+	/* int[] arr1 = new int[] {10,20,30};
+	int[] arr2 = {10,20,30};
+	int[] arr3 = new int[3];
+	arr3[0]=10; arr3[1]=20; arr3[2]=30; */
+	
+	var a = Array(4); // Array()는 내장객체
+	document.write(a.length+"<br>");
+	
+	for(i=0;i<a.length;i++){
+		document.write(a[i]+" ")
+	}
+	document.write("<br>")
+	
+	var b = Array(10,20,30); //크기가 3인 배열에 10 20 30 추가
+	document.write(b.length+"<br>");
+	
+	for(i=0;i<b.length;i++){
+		document.write(b[i]+" ")
+	}
+	document.write("<br>")
+	
+	var c = Array('one','two','three'); 
+	document.write(c.length+"<br>");
+	
+	for(i=0;i<c.length;i++){
+		document.write(c[i]+" ")
+	}
+	document.write("<br>")
+	
+	var d = Array();
+	d[0] = 'spring';
+	d[1] = 'summer';
+	d[2] = 'fall';
+	d[3] = 'winter';
+	document.write(d.length+"<br>");
+	
+	for(i=0;i<d.length;i++){
+		document.write(d[i]+" ")
+	}
+	document.write("<br>");
+	
+	document.write(d+"<br>"); //배열 이름을 써서 출력가능
+	document.write(d.toString()+"<br>"); //기본적으로 toString은 생략되있는상태
+	
+	var e = ['rose','tulip','lily']; //대괄호 사용가능
+	document.write(e.length+"<br>");
+	
+	for(i=0;i<e.length;i++){
+		document.write(e[i]+" ")
+	}
+	document.write("<br>")
+	
+	for(x in e){
+		document.write(x+" "+ e[x] + " ")
+	}
+	document.write("<br>")
+	
+	f = [1,-2.34,"abc",true]; //자바스크립트의 배열은 타입이 달라도 하나로 묶을수있음
+	
+	document.write(f.length+"<br>");
+	
+	for(i=0;i<f.length;i++){
+		document.write(f[i]+" ")
+	}
+	document.write("<br>")
+	
+	for(i in f){
+		document.write(f[i]+" ")
+	}
+	document.write("<br>")
+</script>
+</head>
+<body>
+
+</body>
+</html>
