@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Ex11</title>
+<script type="text/javascript">
+
+	function numCheck(){
+		var val = "0123456789";
+		str = document.jumin.jumin_1.value;
+		
+		for(i=0;i<str.length;i++){
+			if(val.indexOf(str.substring(i,i+1)) == -1){ 
+			alert('숫자만 허용합니다.')
+			document.jumin.jumin_1.value = str.replace(str.charAt(str.length-1),"");
+			}/* 문자가 입력된칸의 값을 가져와서 공백으로 바꾼후 바뀐값만 값에넣는다  */
+			/* 만약 val를 탐색해서 str값을 순서대로 비교하여 -1이면 없다는뜻이므로 숫자만 허용합니다 메세지 출력 */
+		}//for
+		if(str.length == 6){
+			document.jumin.jumin_2.focus();
+		}
+	}//numCheck
+	
+	
+	function validCheck(){ /* onBlur : 포커스를 잃었을 시 */
+		temp1 = str.substr(0,2);
+		temp2 = str.substr(2,2);
+		temp3 = str.substr(4,2);
+		
+		if(temp2<1 || temp2>12){
+			alert("월이 잘못되었음");
+			document.jumin.jumin_1.value = "";
+		}
+		if(temp3<1 || temp3>31){
+			alert("일이 잘못되었음");
+			document.jumin.jumin_1.value = "";
+		}
+	}//vaild()
+	
+	function birthInput(){
+		f_num = document.jumin.jumin_2.value.charAt(0);
+		
+		if (f_num == 1 || f_num == 2){ //주민번호 뒷자리가 1,2면 1900년대생
+			document.jumin.birth_1.value = "19" + temp1; /* 생년월일 텍스트상자에 주민번호 앞자리 넣어서 생성 */
+			document.jumin.birth_2.value =  temp2;
+			document.jumin.birth_3.value =  temp3;
+		}else if (f_num == 3 || f_num == 4){ //주민번호 뒷자리가 3,4면 2000년대생
+			document.jumin.birth_1.value = "20" + temp1;
+			document.jumin.birth_2.value =  temp2;
+			document.jumin.birth_3.value =  temp3;
+		}
+		
+	}
+</script>
+</head>
+<body>
+	<form name = "jumin">
+		주민등록번호
+		<input type="text" name="jumin_1" maxlength="6" size="7" value="" onKeyup ="numCheck()" onBlur = "validCheck()"> - <!-- onKeyup 키보드 입력에서 손을 뗄때 조건실행 -->
+		<input type="text" name="jumin_2" maxlength="7" size="7" onBlur="birthInput()"> <!-- length는 길이 size는 너비 -->
+		<br><br>
+		생년월일
+		<input type="text" name="birth_1" maxlength="4" size="4">년
+		<input type="text" name="birth_2" maxlength="2" size="2">월
+		<input type="text" name="birth_3" maxlength="2" size="2">일
+	</form>
+</body>
+</html>

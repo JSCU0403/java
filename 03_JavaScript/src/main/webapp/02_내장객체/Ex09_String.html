@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Ex09</title>
+<script type="text/javascript">
+	var str = "태양처럼 뜨거운, 바람처럼 자유로운 영혼";
+	document.write(str+'<br>');
+	document.write(str.toString()+'<br>');
+	document.write(str.length+'<br>');//()없으면 속성
+
+	ch = str.charAt(5);
+	document.write("ch : " + ch + "<br>");
+	document.write(str.indexOf("뜨거운") + "<br>");
+	document.write(str.charAt(str.indexOf("뜨거운"))+"<br>");
+	
+	document.write(str.slice(1,3) + "<br>");
+	document.write(str.substring(1,3) + "<br>");
+	
+	/* document.write(str.slice(1,-3) + "<br>"); */ 
+	/* document.write(str.substr(1,-3) + "<br>"); 음수x */ 
+	
+	document.write(str.substr(10,4) + "<br>"); //subSt
+	
+	document.write(str.replace('럼','가') + "<br>");
+	document.write(str+"<br>");
+
+	document.write(str.replace(/럼/g,'가')+"<br>"); // '/A' A가 들어있는 모든 단어 교체
+	document.write(str+"<br>");
+	
+	word = "I Can Do It";
+	document.write(word.toLowerCase() +"<br>");
+	document.write(word.toUpperCase()+"<br>");
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Ex02</title>
+<style type="text/css">
+	body{
+		text-align: center;    
+	} 
+	img{
+		width : 150px;
+		height : 150px;
+	}
+	
+</style>
+<script type="text/javascript">
+	/* var title = Array['라벤더','레몬밤','허브','카모마일','바질'];
+	var title = Array()
+	title[0] = '라벤더';
+	title[1] = '레몬밤';
+	title[2] = '허브';
+	title[3] = '카모마일';
+	title[4] = '바질'; */
+	
+	var title = new Array('라벤더','레몬밤','허브','카모마일','바질');
+	var flower = new Array();
+	flower[0] = "../images/lavender.jpg";
+	flower[1] = "../images/lemonbalm.jpg";
+	flower[2] = "../images/herb.jpg";
+	flower[3] = "../images/camomile.jpg";
+	flower[4] = "../images/basil.jpg";
+	
+	
+	 tstr = "<table border = '1'>";
+	for(i=0;i<2;i++){
+		tstr += "<tr>";
+			for(j=0;j<3;j++){
+				if(3*i+j < 5){
+					tstr += "<td>"+ title[3*i+j] + "</td>";
+				}
+				else{
+					tstr += "<td> 없음 </td>";
+				}
+			}
+		    tstr += "</tr><tr>";
+			for(j=0;j<3;j++){
+				if(3*i+j < 5){
+					tstr += "<td><img src = '"+ flower[3*i+j] + "'></td>";
+				}
+				else{
+					tstr += "<td> 없음 </td>" ;
+				}
+	tstr += "</tr>";
+	}
+	
+	tstr += "</table>";
+	
+	document.write(tstr); 
+	}
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>
