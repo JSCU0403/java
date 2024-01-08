@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Ex03_child</title>
+<script type="text/javascript">
+	function receiver(){
+		window.myform.child_id.value = window.opener.myform.id.value;
+		/* window.opener : 부모창 */
+		window.myform.child_pw.value = window.opener.myform.pw.value;
+	}/* window.(document).myform... : document는 생략가능 */
+	
+	function meClose(){
+		window.opener.myform.id.value = window.myform.child_id.value;
+		window.opener.myform.pw.value = window.myform.child_pw.value;
+		window.close(); // = self.close();
+	}
+</script>
+</head>
+<body onLoad="receiver()">
+	<form name="myform">
+		<input type="text" name = "child_id"><br>
+		<input type="text" name = "child_pw"><br>
+		<input type="button" value = "닫기" onClick="meClose()">
+	</form>
+</body>
+</html>

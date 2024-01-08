@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Ex03</title>
+<script type="text/javascript">
+	function openWin(){
+		w = 400;
+		h = 350;
+		
+		option = "width = "+w+" height = "+h;
+		window.open("Ex03_child.html","팝업",option);
+	}
+</script>
+</head>
+<body>
+	<form name="myform">
+		<input type="text" name = "id"><br>
+		<input type="text" name = "pw"><br>
+		<input type="button" value = "팝업창 열기" onClick="openWin()"><br>
+	</form>
+</body>
+</html>

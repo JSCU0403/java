@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>팝업</title>
+<script type="text/javascript">
+	var sel = new Array('선택','더하기','빼기','곱하기','나누기');
+
+	function init(){
+		cindex = 0;
+		for(i=0; i<sel.length; i++){
+			수학.cal.options[i] = new Option(sel[i]);
+		}
+	}
+	
+	function change(){
+		cindex = 수학.cal.selectedIndex;
+	}
+	
+	function wclose(){
+		x = Number(수학.first.value);
+		y = Number(수학.second.value);
+		
+		switch(cindex){
+		case 0 : alert('사칙연산을 선택해주세요'); return;
+		case 1 : opener.수학.result.value = x+y; break;
+		case 2 : opener.수학.result.value = x-y;  break;
+		case 3 : opener.수학.result.value = x*y;  break;
+		case 4 : opener.수학.result.value = x/y; break; 
+		}
+		
+		window.close();
+	} 
+	 
+	 function check(num) {
+		 var val = "0123456789";
+			if(isNaN(window.document.수학.first.value) || isNaN(수학.first.value)){
+				alert("숫자가아닙니다");
+			}
+				
+	 }
+	
+</script>
+</head>
+<body onLoad = "init()">
+	<form name = "수학">
+		<input type = "text" id = "first" onkeyup = "check('num1')" >
+		<select id = "cal" onchange = "change()" ></select> 
+		<input type = "text" id = "second" onkeyup = "check('num2')"><br><br>
+		<input type = "button" value = "닫기" onClick = "wclose()">
+	</form>
+</body>
+</html>

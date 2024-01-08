@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Ex06</title>
+<style type="text/css">
+	img{
+		width : 200px;
+		height : 200px;
+	}
+</style>
+<script type="text/javascript">
+	arr = ['pic1.jpg','pic2.jpg','pic3.jpg','pic4.jpg'];
+	cnt = 0;
+	 /* function abc(){
+		if(cnt == 4){
+			cnt = 0;
+		}
+		var result = "<img src='../images/"+arr[cnt++]+"'>";	
+		
+		area = document.getElementById("myimg");
+		area.innerHTML = result;
+	}
+	 window.setInterval(abc,500); */
+	//window.setInterval(함수--()안씀 ,시간(ms단위)) 
+	 var image = window.setInterval(function(){
+		 if(cnt == 4){
+				cnt = 0;
+			}
+			var result = "<img src='../images/"+arr[cnt++]+"'>";	
+			area = document.getElementById("myimg");
+			area.innerHTML = result;
+	},500);
+	
+	 setTimeout(function(){
+		clearInterval(image);
+		area = document.getElementById("myimg");
+		area.innerHTML("setInterval 설정 중단합니다.")
+	},10000); 
+	
+</script>
+</head>
+<body>
+	<div id = "myimg">
+	
+	</div>
+</body>
+</html>

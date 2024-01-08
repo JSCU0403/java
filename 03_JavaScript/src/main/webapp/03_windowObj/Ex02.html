@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Ex02</title>
+<script type="text/javascript">
+	function showPopup(){
+		window.open('Ex02_팝업2.html','팝업2','');
+	}
+	
+	function openPopup(){
+		w = 300
+		h = 200
+		l = 50
+		t = 100
+		
+		var option = "width = "+w+" height = "+h+" left= "+l+" top= "+t;
+		mywin = window.open('Ex02_팝업3.html','팝업3',option);
+	}
+	
+	function closePopup(){
+		mywin.close();
+	}
+</script>
+</head>
+<body>
+	<input type = "button" value = "팝업1" onClick="window.open('Ex02_팝업1.html','팝업1','width=400 height=300')">
+	<input type = "button" value = "팝업2" onClick="showPopup()">
+	<input type = "button" value = "팝업3" onClick="openPopup()">
+	<input type = "button" value = "팝업4" onClick="closePopup()">
+</body>
+</html>
