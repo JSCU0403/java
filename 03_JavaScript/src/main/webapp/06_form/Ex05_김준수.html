@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Ex05_김준수</title>
+<style type="text/css">
+	table {
+		border-collapse: collapse;
+		width : 500px;
+		height : 450px;
+	}
+	textarea {
+		width : 300px;
+		height : 100px;
+	}
+</style>
+<script type="text/javascript">
+	// if(myform.id.defaultValue == myform.id.value)
+	function emptyCheck(){
+	str = "입력하신 정보는 \n"
+	
+	regexId = /^[a-zA-Z0-9]*$/;
+	if(myform.id.value.length == 0){
+		alert("아이디를 입력하세요");
+		myform.id.focus();
+		return false;
+	}//아이디
+	str += "아이디 : " + myform.id.value + "\n";
+	
+	if(myform.pw.value.length == 0){
+		alert("비밀번호를 입력하세요");
+		myform.pw.focus();
+		return false;
+	}//비밀번호
+	
+	if(myform.pwck.value != myform.pw.value){
+		alert("비밀번호가 같지않습니다.");
+		myform.pwck.select();
+		return false;
+	}//비밀번호 재확인
+	str += "비밀번호 : " + myform.pwck.value + "\n";
+	
+	regexId = /^[a-zA-Zㄱ-ㅎㅏ-ㅣ가-힣]*$/;
+	if(myform.name.value.length == 0){
+		alert("이름을 입력하세요");
+		myform.name.focus();
+		return false;
+	}else if(myform.name.value.search(regexId) == -1){
+		alert("이름은 영어 또는 한글만 입력가능합니다.");
+		myform.name.select();
+		return false;
+	}//이름
+	str += "이름 : " + myform.name.value + "\n";
+	
+	//if(myform.tel1.value.search(tel1) == -1 || myform.tel1.value.length == 0)
+	if(myform.tel1.value.length == 0){
+		alert("전화번호 앞자리를 입력하세요");
+		myform.tel1.focus();
+		return false;
+	}else if(myform.tel1.value.length < 3 || myform.tel1.value.length > 4){
+		alert("앞번호는 3~4글자만 입력 가능합니다.");
+		myform.tel1.select();
+		return false;
+	}else if(isNaN(myform.tel1.value)){
+		alert("전화번호는 숫자만 입력하세요");
+		myform.tel1.value = "";
+		myform.tel1.focus();
+		return false;
+	}//전화번호 앞자리
+	
+	if(myform.tel2.value.length == 0){
+		alert("전화번호 뒷자리를 입력하세요");
+		myform.tel2.focus();
+		return false;
+	}else if(myform.tel2.value.length < 4 || myform.tel2.value.length > 4){
+		alert("뒷번호는 4글자만 입력 가능합니다.");
+		myform.tel2.select();
+		return false;
+	}else if(isNaN(myform.tel2.value)){
+		alert("전화번호는 숫자만 입력하세요");
+		myform.tel2.value = "";
+		myform.tel2.focus();
+		return false;
+	}//전화번호 뒷자리
+	str += "전화번호 : " + myform.tel.value + "-" + myform.tel1.value + "-" + myform.tel2.value + "\n";
+	
+	if(myform.addr1.value.length == 0){
+		alert("주소를 입력하세요");
+		myform.addr1.focus();
+		return false;
+	}//주소
+	
+	if(myform.addr2.value.length == 0){
+		alert("세부 주소를 입력하세요");
+		myform.addr2.focus();
+		return false;
+	}//상세주소
+	str += "주소 : " + myform.addr1.value + " " + myform.addr2.value + "\n";
+	
+	regexEm = /^[a-z0-9]*@[a-z]*\.[a-z]{2,3}$/;
+	if(myform.mail.value.length == 0){
+		alert("이메일을 입력하세요");
+		myform.mail.focus();
+		return false;
+	}else if(myform.mail.value.search(regexEm) == -1){
+		alert("이메일 형식이 올바르게 입력해주세요");
+		myform.mail.select();
+		return false;
+	}//이메일
+	str += "email : " + myform.mail.value + "\n";
+	
+	str += "가수 : "
+	flag = false;
+	slen = myform.singer.length;
+	for(i=0; i<slen; i++){
+		if(myform.singer[i].checked){
+			flag = true;
+			str += myform.singer[i].value + " ";
+		}
+	}
+	if(flag == false){
+		alert("가수를 하나이상 선택하세요");
+		return false;
+	}//가수***헷갈림
+	
+	str += "\n성별 : "
+	flag = false;
+	glen = myform.gender.length;
+	for(i=0; i<glen; i++){
+		if(myform.gender[i].checked){
+			flag = true;
+			str += myform.gender[i].value + " ";
+		}
+	}
+	if(flag == false){
+		alert("성별을 선택하세요");
+		return false;
+	}//성별
+	
+	
+	if(myform.textarea.value.length == 0){
+		alert("내용을 입력하세요");
+		myform.textarea.focus();
+		return false;
+	}//텍스트상자
+	str += "\n\n내용 : " + myform.textarea.value;
+	
+	alert(str);
+	}
+</script>
+</head>
+<body>
+	<form name = "myform" action = "abc.jsp">
+		<table border = "1" >
+			<tr>
+				<td>아이디</td>
+				<td><input type = "text" name = "id" placeholder="아이디를 입력해주세요"></td>
+			</tr>
+			<tr>
+				<td>비밀번호</td>
+				<td><input type = "password" name = "pw" ></td>
+			</tr>
+			<tr>
+				<td>비밀번호 확인</td>
+				<td><input type = "password" name = "pwck"></td>
+			</tr>
+			<tr>
+				<td>이름</td>
+				<td><input type = "text" name = "name"></td>
+			</tr>
+			<tr>
+				<td>전화 번호</td>
+				<td>
+				<select name = "tel">
+					<option value = "02">02</option>
+					<option value = "031" >031</option>
+					<option value = "032" >032</option>
+				</select>
+				-<input type = "text" size="4" maxlength="4" name = "tel1">
+				-<input type = "text" size="4" maxlength="4" name = "tel2">
+				</td>
+			</tr>
+			<tr>
+				<td>주소</td>
+				<td><input type = "text" name = "addr1"></td>
+			</tr>
+			<tr>
+				<td>세부 주소</td>
+				<td><input type = "text" name = "addr2"></td>
+			</tr>
+			<tr>
+				<td>email</td>
+				<td><input type = "text" name = "mail"></td>
+			</tr>
+			<tr>
+				<td>좋아하는 가수</td>
+				<td>
+				<input type = "checkbox" name = "singer" value = "소녀시대" checked>소녀시대
+				<input type = "checkbox" name = "singer" value = "방탄">방탄
+				<input type = "checkbox" name = "singer" value = "레드벨벳">레드벨벳
+				<input type = "checkbox" name = "singer" value = "동방신기">동방신기
+				</td>
+			</tr>
+			<tr>
+				<td>성별</td>
+				<td><input type = "radio" name = "gender" value = "남">남
+				<input type = "radio" name = "gender" value = "여">여</td>
+			</tr>
+			<tr>
+				<td>글 쓰기</td>
+				<td><textarea row = "20" column = "5" name = "textarea" ></textarea></td>
+			</tr>
+			<tr>
+				<td colspan = "2" style="text-align: center">
+				<input type = "submit" name = "tran" value = "전송합시다." onClick = "return emptyCheck()"> 
+				<input type = "reset" name = "clear" value = "초기화"></td>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>
+
+<!-- 비밀번호 확인 같은지 확인
+전화번호는 Number만
+
+모든칸 유효성검사
+email주소 @안넣으면 유효값x -->

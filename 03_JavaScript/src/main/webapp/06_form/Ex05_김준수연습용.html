@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Ex05_김준수</title>
+<style type="text/css">
+	table {
+		border-collapse: collapse;
+		width : 500px;
+		height : 450px;
+	}
+	textarea {
+		width : 300px;
+		height : 100px;
+	}
+</style>
+<script type="text/javascript">
+	var col = [value = id,'pw','pwck','name','num1','num2','addr1','addr2','mail','singer','gender','textarea'];
+	alert(col[0].value);
+	
+	
+	function emptyCheck(){
+	alert(col[0]);
+	alert(myform.col[0].value);
+		/* for(i=0;i<col.length;i++){
+			if(myform.col[i].value.length == 0){
+			 alert(col[i].value+"입력 누락");
+			 window.myform.col[i].focus();
+			 return false;
+			}
+		} */
+	}
+	
+
+</script>
+</head>
+<body>
+	<form name = "myform" >
+		<table border = "1" >
+			<tr>
+				<td>아이디</td>
+				<td><input type = "text" name = "id" placeholder="아이디를 입력해주세요"></td>
+			</tr>
+			<tr>
+				<td>비밀번호</td>
+				<td><input type = "password" name = "pw" ></td>
+			</tr>
+			<tr>
+				<td>비밀번호확인</td>
+				<td><input type = "password" name = "pwck"></td>
+			</tr>
+			<tr>
+				<td>이름</td>
+				<td><input type = "text" name = "name"></td>
+			</tr>
+			<tr>
+				<td>전화번호</td>
+				<td>
+				<select name = "tel">
+					<option value = "02">02</option>
+					<option value = "031" >031</option>
+					<option value = "032" >032</option>
+				</select>
+				-<input type = "text" size="4" maxlength="4" name = "num1">
+				-<input type = "text" size="4" maxlength="4" name = "num2">
+				</td>
+			</tr>
+			<tr>
+				<td>주소</td>
+				<td><input type = "text" name = "addr1"></td>
+			</tr>
+			<tr>
+				<td>세부주소</td>
+				<td><input type = "text" name = "addr2"></td>
+			</tr>
+			<tr>
+				<td>email</td>
+				<td><input type = "text" name = "mail"></td>
+			</tr>
+			<tr>
+				<td>좋아하는가수</td>
+				<td>
+				<input type = "checkbox" name = "singer">소녀시대
+				<input type = "checkbox" name = "singer">방탄
+				<input type = "checkbox" name = "singer">레드벨벳
+				<input type = "checkbox" name = "singer">동방신기
+				</td>
+			</tr>
+			<tr>
+				<td>성별</td>
+				<td><input type = "radio" name = "gender" value = "남">남
+				<input type = "radio" name = "gender" value = "여">여</td>
+			</tr>
+			<tr>
+				<td>글 쓰기</td>
+				<td><textarea row = "20" column = "5" name = "textarea" ></textarea></td>
+			</tr>
+			<tr>
+				<td colspan = "2" style="text-align: center">
+				<input type = "submit" name = "tran" value = "전송합시다." onClick = "return emptyCheck()"> 
+				<input type = "reset" name = "clear" value = "초기화"></td>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>
+
+<!-- 비밀번호 확인 같은지 확인
+전화번호는 Number만
+
+모든칸 유효성검사
+email주소 @안넣으면 유효값x -->

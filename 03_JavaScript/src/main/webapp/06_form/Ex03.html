@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Ex03</title>
+<script type="text/javascript">
+	function check(){
+		str = "선택한 항목은 "+"\n";
+		
+		flen = myform.fruit.length;
+		
+		flag = false;
+		for(i=0;i<flen;i++){
+			if(myform.fruit[i].checked){
+				str += myform.fruit[i].value+"\n";
+				flag = true;
+			}
+		}//for문
+		
+		if(flag == false){
+			alert("과일 최소 하나는 선택해야 합니다");
+			return false;
+		}
+		
+		alert(str);
+	}//check
+	
+	function check2(){
+		hlen = myform.hobby.length;
+		str = "선택한 항목은 "+"\n";
+		
+		flag = false;
+		for(i=0;i<hlen;i++){
+			if(myform.hobby[i].checked){
+				str += myform.hobby[i].value+"\n";
+				flag = true;
+			}
+		}
+		if(flag == false){
+			alert("취미는 최소 하나이상 선택해야 합니다");
+			return false;
+		}
+		
+		alert(str);
+	}//check2
+</script>
+</head>
+<body>
+	<form name = "myform" action = "abc.jsp">
+		좋아하는 과일을 여러개 선택하세요.<br>
+		<input type = "checkbox" name = "fruit" value = "수박">수박
+		<input type = "checkbox" name = "fruit" value = "복숭아">복숭아
+		<input type = "checkbox" name = "fruit" value = "딸기">딸기
+		<input type = "checkbox" name = "fruit" value = "사과">사과
+		<input type = "submit" name = "btn1" value = "확인" onClick ="return check()">
+		
+		<hr>
+		
+		좋아하는 취미를 여러개 선택하세요.<br>
+		<input type = "checkbox" name = "hobby" value = "게임">게임
+		<input type = "checkbox" name = "hobby" value = "웹툰보기">웹툰보기
+		<input type = "checkbox" name = "hobby" value = "자전거">자전거
+		<input type = "checkbox" name = "hobby" value = "등산">등산
+		<input type = "checkbox" name = "hobby" value = "요리">요리
+		<input type = "submit" name = "btn2" value = "확인" onClick ="return check2()">
+	</form>
+</body>
+</html>

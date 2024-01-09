@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Ex01</title>
+<script type="text/javascript">
+	time = Date();
+	
+	document.write(time+"<br>");
+	
+	function goNaver(){
+		location.href='http://www.naver.com';
+	}
+</script>
+</head>
+<body>
+	<input type="button" value="지금 몇시죠?" onClick="location.reload()"> 
+	<!-- location.reload() :  location객체가 관리하는 영역을 새로고침 -->
+	<br>
+	
+	<input type="button" value="다음" onClick="location.href='http://www.daum.net'"> 
+	<br>
+
+	<input type="button" value="네이버" onClick="goNaver()"> 
+	<br>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Ex06</title>
+<script type="text/javascript">
+	function check(){
+		var msg = document.forms[0].code.value;
+		//var regex = /^\d{3}-?\d{3}$/; //정규표현식은 /로 시작 /로 끝남 
+		//10진수(%d) = \d
+		// $ = 여기서 마무리
+		//10진수 3자리 1112222 -> 111-2222
+		
+		//주민번호 6자리- 뒷자리의 맨앞에는 1,2,3,4중에 하나만 들어가야한다 = [1234] 아니면 [1-4]
+		//var regex1 = /^\d{6}-[1234]\d{6}$/;
+		
+		//\d{1,2} : 1자리나 2자리
+		/* var regex = /^(\d{4})[. -]([01]?\d{1})[. -]([0123]?\d)$/; */
+		
+		//[a-zA-Z0-9]{4-8} : a에서z까지 A에서Z까지 0에서9까지 4자리에서 8자리
+		var regex = /[a-zA-Z0-9]{4,8}@[a-zA-Z0-9]{3,5}[.][a-z]{3,4}$/;
+		if(msg.search(regex) == -1){//정규식의 맞지않으면 -1을 리턴
+			alert("잘못된 형식");
+		}
+		else{
+			alert("올바른 형식");
+		}
+	}
+</script>
+</head>
+<body>
+	<form>
+		<input type = "text" name = "code">
+		<input type = "button" value = "클릭" onClick = "check()">
+	</form>
+</body>
+</html>
+
