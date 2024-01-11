@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Ex08</title>
+<style type="text/css">
+	.spotlight{
+		background-color : yellow;
+	}
+	.redText{
+		color : red;
+	}
+	.largeText{
+		font-size : 30pt;
+	}
+	.italicText{
+		font-style : italic;
+	}
+	.under{
+		text-decoration : underline;
+	}
+	
+</style>
+<script type="text/javascript" src ="../js/jquery.js"></script>
+<script type="text/javascript">
+
+	$(document).ready(function(){
+		$('span[id]').addClass('spotlight');
+		//id에 전부 적용
+		$('span[id = simple1]').addClass('redText');
+		//id가 simple1인곳에 전부적용
+		$('span[id != simple1]').addClass('largeText');
+		//id가 simple1이 !(아닌곳)에 전부적용
+		$('span[id ^= simple]').addClass('italicText');
+		//id에 simple이 ^(값이 들어가는 곳)에 적용
+		$('span[id *= text]').addClass('under');
+		//id에 text값을 *(포함)하는곳에 모두 적용
+		$('span[id $= 3]').removeClass('under'); 
+		//id가 3으로 $(값이 끝나는곳)에 적용
+	});
+	
+</script>	
+</head>
+<body>
+	<span id="simpletext1">simple</span>
+	<span class="simple2">jQuery</span>
+	<span id="simpletext3">basic</span>
+	<span id="simple4">example</span>
+	<span id="complex5">book</span>
+</body>
+</html>

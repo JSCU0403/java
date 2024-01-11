@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Ex05</title>
+<style type="text/css">
+	td{
+		width:50px;
+		height:30px;
+		text-align:center;
+	}
+</style>
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript">
+	num=1;
+	str = "<table border = '1'>";
+	for(j=0;j<4;j++){
+		str += "<tr>"
+		for(i=0;i<7;i++){
+			str += "<td>"+ (num++) +"</td>"
+		}
+		str += "</tr>"
+	}
+	str += "</table>";
+	document.write(str);//4행 7열 1234~
+	
+	$(document).ready(function(){
+		$('tr:eq(0)').css('background','orange');
+		//= $('tr:first').css('background','orange');
+		$('td:eq(3)').css('background','blue');
+		$('tr:eq(1)  td:nth-child(even)').css('background','pink');
+		$('tr:eq(2)  td:nth-child(odd)').css('background','red');
+		$('tr:eq(3)  td:nth-child(2n)').css('background','yellow');
+		$('tr:eq(3)  td:nth-child(3n+1)').css('background','grey');
+		//n : 배수
+		
+		sum=0;
+		$('tr:eq(0) td').each(function(){
+			//alert($(this).text()); 1 2 3 4 5 6 7
+			sum += parseInt($(this).text());//= Number();
+		});
+		
+		$('#result').append(sum);
+	});
+</script>
+</head>
+<body>
+	<div id = "result">
+		합계 : 
+	</div>
+</body>
+</html>

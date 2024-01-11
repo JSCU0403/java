@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Ex04</title>
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript">
+
+	$(document).ready(function(){
+		$('span:nth-child(1)').css('background','yellow'); //자식 span의 첫번째 (span:first로 대체가능)
+		$('span:nth-child(2)').css('font-style','italic') //자식 2번째
+								.css('text-decoration','underline');
+		$('span:nth-child(3)').css('background','red'); //자식 3번째
+		$('span:first').css('color','orange'); //전체에서 첫번째 span
+		$('span:last').css('color','cyan'); //전체에서 마지막 span
+	});
+	
+</script>
+</head>
+<body>
+	<p>
+		<span>jQuery예제1</span>
+		<span>jQuery예제2</span>
+		<span>jQuery예제3</span>
+	</p>
+	
+	<p>
+		<span>jQuery예제4</span>
+		<span>jQuery예제5</span>
+		<span>jQuery예제6</span>
+	</p>
+	
+	<p>
+		<span>jQuery예제7</span>
+		<span>jQuery예제8</span>
+		<span>jQuery예제9</span>
+	</p>
+	
+</body>
+</html>

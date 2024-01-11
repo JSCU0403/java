@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Ex03</title>
+<style type="text/css">
+	.style1{
+		color : red;
+		background-color : pink;
+	}
+	.style2{
+		color : cyan;
+		background-color : blue;
+	}
+	.style3{
+		color : green;
+		background-color : yellow;
+	}
+</style>
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+
+		//$('tr:nth-child(1)').addClass('style1'); //tr의 첫번째 ㅈ식
+		//$('tr:first').addclass('style1'); //첫번째 tr
+		//$('tr:last').addclass('style2'); //마지막 tr
+		//table의 첫번째 자식 $(gog)
+		//$('tr:nth-child(even)').addClass('style3'); //짝수번째 클래스설정 nth-child : 1부터 시작 nth : 0부터시작	
+		$('tr:eq(2)').addClass('style3'); //tr의 3번째 (eq는 0부터시작)
+		$('tr:eq(3)').css('background-color','orange'); //tr의 4번째
+	});
+</script>
+</head>
+<body>
+	<table border = "1">
+		<tr>
+			<td>one</td>
+			<td>one</td>
+			<td>one</td>
+			<td>one</td>
+			<td>one</td>
+		</tr>
+		<tr>
+			<td>two</td>
+			<td>two</td>
+			<td>two</td>
+			<td>two</td>
+			<td>two</td>
+		</tr>
+		<tr>
+			<td>three</td>
+			<td>three</td>
+			<td>three</td>
+			<td>three</td>
+			<td>three</td>
+		</tr>
+		<tr>
+			<td>four</td>
+			<td>four</td>
+			<td>four</td>
+			<td>four</td>
+			<td>four</td>
+		</tr>
+		<tr>
+			<td>five</td>
+			<td>five</td>
+			<td>five</td>
+			<td>five</td>
+			<td>five</td>
+		</tr>
+	</table>
+	
+	<br>
+	
+	<table border = "1">
+		<tr>
+			<td>one</td>
+		</tr>
+		<tr>
+			<td>two</td>
+		</tr>
+		<tr>
+			<td>three</td>
+		</tr>
+		<tr>
+			<td>four</td>
+		</tr>
+		<tr>
+			<td>five</td>
+		</tr>
+	</table>
+</body>
+</html>

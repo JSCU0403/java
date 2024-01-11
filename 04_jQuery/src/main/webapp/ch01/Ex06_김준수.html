@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Ex06</title>
+<style type="text/css">
+	.cyan{
+		background : cyan;
+	}
+	.yellow{
+		background : yellow;
+	}
+	.red{
+		background : red;
+	}
+</style>
+<script type="text/javascript" src ="../js/jquery.js"></script>
+<script type="text/javascript">
+
+	$(document).ready(function(){
+		
+		//$('td:nth-child(2):eq(0)').text() 각 점수칸마다 점수
+		//$('td:nth-child(2)').length 점수 길이
+		
+		/* for(i=0;i<$('td:nth-child(2)').length;i++){
+			if($('td:nth-child(2)').eq(i).text() >= 80){
+				$('td:nth-child(2)').eq(i).addClass("cyan");
+			}//if
+			else if($('td:nth-child(2)').eq(i).text() < 80 && $('td:nth-child(2)').eq(i).text() >= 40){
+				$('td:nth-child(2)').eq(i).addClass("yellow");
+			}//else if
+			else if($('td:nth-child(2)').eq(i).text() < 40){
+				$('td:nth-child(2)').eq(i).addClass("red");
+			}//else if
+		};//for */
+		
+		
+		
+		var val = 0;
+		$('td').next().each(function(){
+			val += Number($(this).text());
+
+			if($(this).text() >= 80){
+				$(this).addClass("cyan");
+				$(this).prev().addClass("cyan");
+				$(this).next().addClass("cyan");
+			}//if
+			else if($(this).text() < 80 && $(this).text() >= 40){
+				$(this).addClass("yellow");
+				$(this).siblings().addClass("yellow");
+			}//else if
+			else if($(this).text() < 40){
+				$(this).addClass("red");
+				$(this).parent().addClass("red");
+			}//else if
+		
+		});//for
+		
+		$('tr > td:nth-child(3)').each(function(){
+			if($(this).text() == "여"){
+				$(this).css('color','orange');
+				$(this).siblings().css('color','orange');
+			}
+			else if($(this).text() == "남"){
+				$(this).css('color','green');
+				$(this).siblings().css('color','green');
+			}
+		});//each
+			$(".result").append(val);
+		
+	});
+
+</script>
+</head>
+<body>
+	<table border = "1">
+		<tr>
+			<th width = "100">이름</th>
+			<th width = "100">점수</th>
+			<th width = "100">성별</th>
+		</tr>
+		<tr>
+			<td>홍길동</td>
+			<td>99</td>
+			<td>남</td>
+		</tr>
+		<tr>
+			<td>심청</td>
+			<td>55</td>
+			<td>여</td>
+		</tr>
+		<tr>
+			<td>보아</td>
+			<td>39</td>
+			<td>여</td>
+		</tr>
+		<tr>
+			<td>이무진</td>
+			<td>20</td>
+			<td>남</td>
+		</tr>
+		<tr>
+			<td>정국</td>
+			<td>69</td>
+			<td>남</td>
+		</tr>
+		<tr>
+			<td>몽룡</td>
+			<td>96</td>
+			<td>남</td>
+		</tr>
+		<tr>
+			<td>하니</td>
+			<td>75</td>
+			<td>여</td>
+		</tr>
+	</table>
+	
+	<div class="result">총합 : </div>
+</body>
+</html>
